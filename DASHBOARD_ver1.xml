@@ -21,7 +21,7 @@
             <mxGeometry x="499.79" y="100" width="98.425" height="50" as="geometry" />
           </mxCell>
         </object>
-        <object label="C1&lt;div&gt;{{RACKS}}&lt;br&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; , rgb(18, 18, 18));&quot;&gt;{{TEMP}}&lt;/span&gt;&lt;span °C&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; , rgb(18, 18, 18));&quot;&gt;{{RH}}%RH&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" ID="C1" id="3F20KyqQ2SGbxtlvmqGl-10">
+        <object label="C1&lt;div&gt;{{RACKS}}&lt;br&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; , rgb(18, 18, 18));&quot;&gt;{{TEMP}}&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));&quot;&gt;°C&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; , rgb(18, 18, 18));&quot;&gt;{{RH}}%RH&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" ID="C1" id="3F20KyqQ2SGbxtlvmqGl-10">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;fontSize=16;align=center;verticalAlign=middle;fontFamily=Helvetica;" parent="1" vertex="1">
             <mxGeometry x="106.3" y="362" width="98" height="120" as="geometry" />
           </mxCell>
