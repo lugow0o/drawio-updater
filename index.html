@@ -361,7 +361,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>📊 Data Center Diagram Updater</h1>
+    <h1>Data Center Diagram Updater</h1>
     
     <div class="status-bar">
       <div class="status-indicator">
@@ -381,13 +381,13 @@
     <div class="controls">
       <button onclick="loadData()" id="updateBtn">
         <span class="loading-spinner" id="loadingSpinner"></span>
-        <span>🔄 Update Diagram</span>
+        <span>Update Diagram</span>
       </button>
       <button onclick="openGoogleSheet()" class="btn-secondary">
-        <span>📊 Open Google Sheet</span>
+        <span>Open Google Sheets</span>
       </button>
       <button onclick="toggleAutoUpdate()" class="btn-success" id="autoUpdateBtn">
-        <span>⏰ Auto Update: OFF</span>
+        <span>Auto Update: OFF</span>
       </button>
     </div>
 
@@ -528,13 +528,13 @@
       if (isAutoUpdateEnabled) {
         clearInterval(autoUpdateInterval);
         isAutoUpdateEnabled = false;
-        btn.innerHTML = '<span>⏰ Auto Update: OFF</span>';
+        btn.innerHTML = '<span>Auto Update: OFF</span>';
         btn.className = 'btn-success';
         showToast('Auto-update disabled', 'info');
       } else {
         autoUpdateInterval = setInterval(loadData, interval * 60 * 1000);
         isAutoUpdateEnabled = true;
-        btn.innerHTML = `<span>⏰ Auto Update: ON (${interval}m)</span>`;
+        btn.innerHTML = `<span>Auto Update: ON (${interval}m)</span>`;
         btn.className = 'btn-success';
         showToast(`Auto-update enabled (${interval} minutes)`, 'success');
       }
@@ -582,19 +582,19 @@
       previewDiv.className = "diagram-preview";
       
       previewDiv.innerHTML = `
-        <h4>🔍 Updated Diagram Preview</h4>
+        <h4>Updated Diagram Preview</h4>
         <iframe src="https://viewer.diagrams.net/?highlight=0000ff&edit=_blank&layers=1&nav=1&title=Updated%20Diagram#R${encodedXml}"></iframe>
         <div class="download-section">
           <a href="${xmlUrl}" download="${filename}" class="download-link">
-            ⬇️ Download XML
+            Download XML
           </a>
           <a href="https://viewer.diagrams.net/?highlight=0000ff&edit=_blank&layers=1&nav=1&title=Updated%20Diagram#R${encodedXml}" 
              target="_blank" class="download-link" style="background: #007bff;">
-            🔗 Open in Draw.io
+            Open in Draw.io
           </a>
         </div>
         <p style="margin: 15px 0 0 0; font-size: 12px; color: #666; padding: 10px; background: #f8f9fa; border-radius: 6px;">
-          💡 <strong>Tip:</strong> Use the Draw.io link above to edit the diagram directly, or download the XML to import into your local Draw.io installation.
+          <strong>Tip:</strong> Use the Draw.io link above to edit the diagram directly, or download the XML to import into your local Draw.io installation.
         </p>
       `;
       
@@ -607,7 +607,7 @@
       const sheetId = document.getElementById('sheetId').value;
       const sheetUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/edit`;
       window.open(sheetUrl, '_blank');
-      log("📊 Opening Google Sheet in new tab...", "info");
+      log("Opening Google Sheet in new tab...", "info");
       showToast('Opening Google Sheet', 'info');
     }
 
@@ -624,7 +624,7 @@
       const settings = getSettings();
       
       if (!settings.sheetId || !settings.apiKey) {
-        log("❌ Missing Sheet ID or API Key", "error");
+        log("Missing Sheet ID or API Key", "error");
         showToast('Please configure Sheet ID and API Key', 'error');
         showTab('settings');
         return;
@@ -632,7 +632,7 @@
 
       setLoading(true);
       showProgress(true, 10);
-      log("🔄 Starting update process...", "info");
+      log("Starting update process...", "info");
       
       try {
         updateConnectionStatus(false);
@@ -657,7 +657,7 @@
         });
         
         stats.total = rows.length;
-        log(`📋 Loaded ${rows.length} rows: ${headers.join(', ')}`, "success");
+        log(`Loaded ${rows.length} rows: ${headers.join(', ')}`, "success");
 
         showProgress(true, 70);
 
@@ -687,7 +687,7 @@
         setTimeout(() => showProgress(false), 1000);
         
       } catch (error) {
-        log(`❌ Error: ${error.message}`, "error");
+        log(`Error: ${error.message}`, "error");
         showToast(`Error: ${error.message}`, 'error');
         updateConnectionStatus(false);
         showProgress(false);
@@ -823,9 +823,9 @@
       const updatesCount = updatedObjectIds.size; // Get count of unique updated objects
 
       if (updatesCount > 0) {
-        log(`✅ Successfully updated ${updatesCount} unique objects`, "success");
+        log(`Successfully updated ${updatesCount} unique objects`, "success");
       } else {
-        log("⚠️ No objects updated - check ID matching", "warning");
+        log("No objects updated - check ID matching", "warning");
       }
 
       return updatedXml;
@@ -833,7 +833,7 @@
 
     // Initialize
     document.addEventListener('DOMContentLoaded', function() {
-      log("🚀 Diagram Updater initialized", "info");
+      log("Diagram Updater initialized", "info");
       
       // Collapse settings sections by default
       document.querySelectorAll('.collapsible').forEach(el => {
@@ -856,4 +856,5 @@
 
   </script>
 </body>
+
 </html>
